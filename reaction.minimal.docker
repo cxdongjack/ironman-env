@@ -1,5 +1,8 @@
 FROM debian:jessie
 
+# install node-gyp
+RUN bash npm install -g node-gyp
+
 # build script directories
 ENV APP_SOURCE_DIR "/var/src"
 ENV APP_BUNDLE_DIR "/var/www"

@@ -20,9 +20,6 @@ RUN bash $BUILD_SCRIPTS_DIR/install-deps.sh && \
 # git clone cxdongjack/ironman
 RUN bash $BUILD_SCRIPTS_DIR/clone.sh
 
-# install node-gyp
-RUN bash npm install -g node-gyp
-
 # install meteor
 RUN bash $BUILD_SCRIPTS_DIR/install-meteor.sh && \
  		cd $APP_SOURCE_DIR && \
