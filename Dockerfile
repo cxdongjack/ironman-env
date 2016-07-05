@@ -6,6 +6,11 @@ ENV NODE_VERSION "0.10.43"
 ENV INSTALL_PHANTOMJS "false"
 ENV PHANTOMJS_VERSION "2.1.7"
 
+# Meteor environment variables
+ENV PORT "80"
+ENV ROOT_URL "http://localhost"
+ENV MONGO_URL "mongodb://127.0.0.1:27017/meteor"
+
 # build script directories
 ENV APP_SOURCE_DIR "/var/src"
 ENV APP_BUNDLE_DIR "/var/www"
