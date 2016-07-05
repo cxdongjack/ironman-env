@@ -12,6 +12,12 @@ printf "\n[-] Building simple, not install packages..\n\n"
 
 cd $APP_SOURCE_DIR
 
+# update
+git submodule init
+git submodule update
+
 # build the source
-mkdir -p $APP_BUNDLE_DIR
-meteor build --directory $APP_BUNDLE_DIR
+mkdir -p $APP_BUNDLE_DIR.tmp
+meteor build --directory $APP_BUNDLE_DIR.tmp
+rm -rf $APP_BUNDLE_DIR
+mv $APP_BUNDLE_DIR.tmp $APP_BUNDLE_DIR

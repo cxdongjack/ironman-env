@@ -2,6 +2,10 @@ FROM debian:jessie
 
 ENV NODE_VERSION "0.10.43"
 
+# Install PhantomJS
+ENV INSTALL_PHANTOMJS "false"
+ENV PHANTOMJS_VERSION "2.1.7"
+
 # build script directories
 ENV APP_SOURCE_DIR "/var/src"
 ENV APP_BUNDLE_DIR "/var/www"
@@ -15,6 +19,7 @@ RUN chmod -R +x $BUILD_SCRIPTS_DIR
 
 # install base dependencies, build app, cleanup
 RUN bash $BUILD_SCRIPTS_DIR/install-deps.sh && \
+		bash $BUILD_SCRIPTS_DIR/install-phantom.sh && \
 		bash $BUILD_SCRIPTS_DIR/install-node.sh
 
 # git clone cxdongjack/ironman
